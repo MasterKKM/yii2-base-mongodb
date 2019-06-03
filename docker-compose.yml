@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+    php:
+      container_name: Yii-Apache-MongoDb
+      build: docker/php
+      volumes:
+       - ./html:/app
+       - ./mongo:/var/mongo/base
+       - ./dump:/var/dump
+      ports:
+        - "80:80"
+        - "27017:27017"
